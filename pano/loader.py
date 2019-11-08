@@ -105,6 +105,7 @@ class Loader(EasyCopy):
         self.load_binary(code)
 
     def load_bytecode(self, bytecode, address, network) :
+        # this is not standard Panoramix - added for Etherscan
         # here we take bytecode and load it to load_binary
         # included address as well, so we could generate the cache .bin file
         # retain most of the original caching logic

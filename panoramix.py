@@ -191,6 +191,7 @@ def decompile(this_addr, only_func_name=None):
     loader = Loader()
 
     if '--bytecode' in sys.argv:
+        # this is not standard Panoramix - added for Etherscan
         # I assume the this_addr checks are done - to double check
         indexOfBytecode = sys.argv.index("--bytecode") + 1
         indexOfNetwork = sys.argv.index("--network") + 1
@@ -206,6 +207,27 @@ def decompile(this_addr, only_func_name=None):
                 print("#  Address " + C.end + loader.addr + C.gray)
                 print("# ")
                 print("#  No bytecode is provided for --bytecode flag ")
+                print("# ")
+                print("# " + C.end)
+    elif '--file' in sys.argv:
+        # this is not standard Panoramix - added for Etherscan
+        indexOfFilepath = sys.argv.index("--file") + 1
+        indexOfNetwork = sys.argv.index("--network") + 1
+        if len(sys.argv[indexOfFilepath]) > 0:
+            #read file
+            f = open(sys.argv[indexOfFilepath])
+            bytecode = f.read().rstrip()
+            loader.load(this_addr, bytecode, sys.argv[indexOfNetwork])
+        else:
+            this_fname = cache_fname(this_addr, 'pan')
+            f = open(this_fname, 'w')
+            with redirect_stdout(f):
+                print()
+                print(C.gray + "#")
+                print(f"#  Panoramix {VER} ")
+                print("#  Address " + C.end + loader.addr + C.gray)
+                print("# ")
+                print("#  No filepath is provided for --file flag ")
                 print("# ")
                 print("# " + C.end)
     else:

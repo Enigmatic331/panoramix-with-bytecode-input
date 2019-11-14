@@ -368,7 +368,7 @@ def decompile(this_addr, only_func_name=None):
         assert loader.network != 'none' # otherwise, the code is empty, and we caught it before
 
         print(C.gray+"#")
-        print(f"#  Panoramix {VER} ")
+        print(f"#  Panoramix v{VER} ")
 
         if loader.network != 'mainnet':
             pretty_addr = f"{C.end + C.okgreen}{loader.network}:{loader.addr}{C.end + C.gray}"

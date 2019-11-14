@@ -203,7 +203,7 @@ def decompile(this_addr, only_func_name=None):
             with redirect_stdout(f):
                 print()
                 print(C.gray + "#")
-                print(f"#  Panoramix {VER} ")
+                print(f"#  Panoramix v{VER} ")
                 print("#  Address " + C.end + loader.addr + C.gray)
                 print("# ")
                 print("#  No bytecode is provided for --bytecode flag ")
@@ -224,7 +224,7 @@ def decompile(this_addr, only_func_name=None):
             with redirect_stdout(f):
                 print()
                 print(C.gray + "#")
-                print(f"#  Panoramix {VER} ")
+                print(f"#  Panoramix v{VER} ")
                 print("#  Address " + C.end + loader.addr + C.gray)
                 print("# ")
                 print("#  No filepath is provided for --file flag ")
@@ -241,7 +241,7 @@ def decompile(this_addr, only_func_name=None):
         with redirect_stdout(f):
             print()
             print(C.gray + "#")
-            print(f"#  Panoramix {VER} ")
+            print(f"#  Panoramix v{VER} ")
             print("#  Address " + C.end + loader.addr + C.gray)
             print("# ")
             print("#  There seems to be no bytecode for this address. ")
